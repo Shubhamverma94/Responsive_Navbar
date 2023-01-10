@@ -19,10 +19,10 @@ import {
   CloseIcon,
   AddIcon,
 } from "@chakra-ui/icons";
-import Photo from "../Home/Photo";
-import Name from "../Name/Name";
+import Photo from "./Photo";
+import Name from "./Name";
 import "./Navbar.css";
-import Shubham_Verma_Resume from "../../assests/Shubham_Verma_Resume.pdf";
+import Shubham_Verma_Resume from "./Shubham_Verma_Resume.pdf";
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
