@@ -7,14 +7,22 @@ import {
   useColorMode,
   Show,
   HStack,
+  Text,
   useDisclosure,
   IconButton,
+  Hide,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import Photo from "./Photo";
-import Name from "./Name";
+import {
+  MoonIcon,
+  SunIcon,
+  HamburgerIcon,
+  CloseIcon,
+  AddIcon,
+} from "@chakra-ui/icons";
+import Photo from "../Home/Photo";
+import Name from "../Name/Name";
 import "./Navbar.css";
-import Shubham_Verma_Resume from "./Shubham_Verma_Resume.pdf";
+import Shubham_Verma_Resume from "../../assests/Shubham_Verma_Resume.pdf";
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -42,18 +50,19 @@ export default function Navbar() {
           </HStack>
 
           <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-            <IconButton
+            {/* <IconButton
               size={"md"}
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
               aria-label={"Open Menu"}
               display={{ md: "none" }}
               onClick={isOpen ? onClose : onOpen}
-            />
+            /> */}
             <HStack spacing={8} alignItems={"center"}>
               <HStack
                 as={"nav"}
                 spacing={4}
                 display={{ base: "none", md: "flex" }}
+                id="myDIV"
               >
                 <Button className="btnRes">
                   <a href="#Home">
@@ -90,7 +99,7 @@ export default function Navbar() {
             </HStack>
           </Flex>
 
-          {isOpen ? (
+          {/* {isOpen ? (
             <Box pb={4} display={{ md: "none" }}>
               <Stack as={"nav"} spacing={4}>
                 <Button>
@@ -151,7 +160,7 @@ export default function Navbar() {
                 </Button>
               </Stack>
             </Box>
-          ) : null}
+          ) : null} */}
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
@@ -188,6 +197,121 @@ export default function Navbar() {
               </Button>
             </Stack>
           </Flex>
+          <IconButton
+            size={"md"}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+          />
+          {isOpen ? (
+            <Box pb={4} display={{ md: "none" }}>
+              <Stack as={"nav"} spacing={4}>
+                <Button  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}>
+                  <a href="#Home">
+                    {" "}
+                    <b>Home</b>
+                  </a>
+                </Button>
+                <Button  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}>
+                  <a href="#Home">
+                    {" "}
+                    <b>Home</b>
+                  </a>
+                </Button>
+
+                <Button  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}>
+                  <a href="#Home">
+                    {" "}
+                    <b>Home</b>
+                  </a>
+                </Button>
+                <Button  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}>
+                  <a href="#Home">
+                    {" "}
+                    <b>Home</b>
+                  </a>
+                </Button>
+                <Button
+                  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}
+                >
+                  <a href="#Home">
+                    {" "}
+                    <b>Home</b>
+                  </a>
+                </Button>
+
+                <Button
+                  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}
+                >
+                  <a href="#About">
+                    <b>About</b>
+                  </a>
+                </Button>
+
+                <Button
+                  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}
+                >
+                  <a href="#Skills">
+                    {" "}
+                    <b>Skills</b>
+                  </a>
+                </Button>
+
+                <Button
+                  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}
+                >
+                  <a href="#Projects">
+                    <b>Projects</b>
+                  </a>
+                </Button>
+
+                <Button
+                  onClick={isOpen ? onClose : onOpen}
+                  _hover={{
+                    textShadow: "#FC0 1px 0 10px",
+                    transform: "scale(1.2)",
+                  }}
+                >
+                  <a href="#Contact">
+                    <b>Contact</b>
+                  </a>
+                </Button>
+              </Stack>
+            </Box>
+          ) : null}
         </Flex>
       </Box>
     </div>
